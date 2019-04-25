@@ -1,0 +1,184 @@
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+NOP
+Acc: 0, PC: 1
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+NOT
+Acc: 1, PC: 2
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+halt called
+HALT
+Acc: 1, PC: 2
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JUMP 5 immediate addressing
+Acc: 10, PC: 5
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JUMP 25 direct addressing
+Acc: 10, PC: 30
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JUMP 10 indirect addressing
+Acc: 10, PC: 60
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JUMP 11 special addressing
+Acc: 10, PC: 33
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JMPZ 5 immediate addressing acc 0
+Acc: 0, PC: 5
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JMPZ 25 direct addressing acc 0
+Acc: 0, PC: 30
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JMPZ 10 indirect addressing acc 0
+Acc: 0, PC: 60
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JMPZ 11 special addressing acc 0
+Acc: 0, PC: 33
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JMPZ 5 immediate addressing acc > 0
+Acc: 1, PC: 34
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JMPZ 25 direct addressing acc > 0
+Acc: 1, PC: 35
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JMPZ 10 indirect addressing acc > 0
+Acc: 1, PC: 36
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+JMPZ 11 special addressing acc > 0
+Acc: 1, PC: 37
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+LOD 12 direct addressing
+Acc: 36, PC: 38
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+LOD 12 immediate addressing
+Acc: 12, PC: 39
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+LOD 3 indirect addressing
+Acc: 27, PC: 40
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+STO 3 direct addressing
+Acc: 27, PC: 41
+[0, 3, 6, 27, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+STO 2 indirect addressing
+Acc: 27, PC: 42
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+AND 12 direct addressing
+Acc: 1, PC: 43
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+AND 12 immediate addressing
+Acc: 1, PC: 44
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+AND 12 direct addressing
+Acc: 0, PC: 45
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+AND 12 immediate addressing
+Acc: 0, PC: 46
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+AND 0 direct addressing
+Acc: 0, PC: 47
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+AND 0 immediate addressing
+Acc: 0, PC: 48
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+CMPL 10 direct addressing
+Acc: 0, PC: 49
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+CMPL 10 (set to -2) direct addressing
+Acc: 1, PC: 50
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, -2, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+CMPZ 10 (set to -2) direct addressing
+Acc: 0, PC: 51
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, -2, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+CMPZ 10 (set to 2) direct addressing
+Acc: 0, PC: 52
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 2, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+CMPZ 10 (set to 0) direct addressing
+Acc: 1, PC: 53
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+ADD 12 direct addressing
+Acc: 37, PC: 54
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+ADD 12 immediate addressing
+Acc: 49, PC: 55
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+ADD 4 indirect addressing
+Acc: 85, PC: 56
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+SUB 12 direct addressing
+Acc: 49, PC: 57
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+SUB 12 immediate addressing
+Acc: 37, PC: 58
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+SUB 4 indirect addressing
+Acc: 1, PC: 59
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+MUL 12 direct addressing
+Acc: 36, PC: 60
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+MUL 12 immediate addressing
+Acc: 432, PC: 61
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+MUL 4 indirect addressing
+Acc: 15552, PC: 62
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+DIV 12 direct addressing
+Acc: 432, PC: 63
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+DIV 12 immediate addressing
+Acc: 36, PC: 64
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+DIV 4 indirect addressing
+Acc: 1, PC: 65
+[0, 3, 6, 27, 12, 15, 27, 21, 24, 27, 0, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+1-NOP parity check OK
+2-NOP flags check OK
+3-NOP parity check OK
+4-NOP flags check OK
+5-NOP parity check OK
+6-NOP flags check OK
+7-NOP parity check OK
+8-NOT parity check OK
+9-NOT flags check OK
+10-NOT parity check OK
+11-NOT flags check OK
+12-NOT parity check OK
+13-NOT flags check OK
+14-NOT parity check OK
+15-HALT parity check OK
+16-HALT flags check OK
+17-HALT parity check OK
+18-HALT flags check OK
+19-HALT parity check OK
+20-HALT flags check OK
+21-HALT parity check OK
+22-JUMP parity check OK
+23-JUMP parity check OK
+24-JUMP parity check OK
+25-JUMP parity check OK
+26-JMPZ parity check OK
+27-JMPZ parity check OK
+28-JMPZ parity check OK
+29-JMPZ parity check OK
+30-LOD parity check OK
+31-LOD parity check OK
+32-LOD parity check OK
+33-LOD flags check OK
+34-LOD parity check OK
+35-STO parity check OK
+36-STO parity check OK
+37-STO flags check OK
+38-STO flags check OK
+39-AND flags check OK
+40-AND flags check OK
+41-CMPL flags check OK
+42-CMPL flags check OK
+43-CMPL flags check OK
+44-CMPZ flags check OK
+45-CMPZ flags check OK
+46-CMPZ flags check OK
+47-ADD flags check OK
+48-SUB flags check OK
+49-MUL flags check OK
+50-DIV flags check OK
+51-DIV zero div immed check OK
+52-DIV zero div dir check OK
+53-DIV zero div indir check OK

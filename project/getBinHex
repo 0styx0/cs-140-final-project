@@ -1,0 +1,8 @@
+	public String getBinHex() {
+		StringBuilder build = new StringBuilder();
+		String s = "00000000" + Integer.toString(opcode,2);
+		build.append(s.substring(s.length()-8));
+		build.append("  ");
+		build.append(Integer.toHexString(arg));
+		return build.toString().toUpperCase();
+	}

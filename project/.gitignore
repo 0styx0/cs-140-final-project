@@ -1,0 +1,12 @@
+/BasicTester.class
+/Instruction.class
+/ParityCheckException.class
+/InstructionTest.class
+/CodeAccessException.class
+/DataAccessException.class
+/DivideByZeroException.class
+/HaltCallback.class
+/IllegalInstructionException.class
+/Machine$CPU.class
+/Machine.class
+/Memory.class
