@@ -24,23 +24,73 @@ class Machine {
 	public int getData(int i){
 		return memory.getData(i);
 	}
-	public int[] getData(int i, int j){
+	int[] getData(int i, int j){
 		return memory.getData(i, j);
 	}
-	public int getPC() {
+	public Instruction getCode(int index) {
+		return memory.getCode(index);
+	}
+	public int getProgramSize() {
+		return memory.getProgramSize();
+	}
+	public void addCode(Instruction j) {
+		memory.addCode(j);
+	}
+	// package private
+	void setCode(int index, Instruction instr) {
+		memory.setCode(index, instr);
+	}
+	public List<Instruction> getCode() {
+		return memory.getCode();
+	}
+	//package private
+	Instruction[] getCode(int min, int max) {
+		return memory.getCode(min,max);
+	}
+	int getPC() {
 		return cpu.pc;
+	}
+	public void setPC(int pc) {
+		cpu.pc = pc;
+	}
+	public int getChangedDataIndex() {
+		return memory.getChangedDataIndex();
 	}
 	public int getAccum() {
 		return cpu.accum;
 	}
-	public void setData(int i, int j) {
-		memory.setData(i, j);
-	}
 	public void setAccum(int i) {
 		cpu.accum = i;
 	}
-	public void setPC(int i) {
-		cpu.pc = i;
+	public void clear() {
+		memory.clearData();
+		memory.clearCode();
+		cpu.pc = 0;
+		cpu.accum = 0;
+	}
+	public void step(){
+
+		try {
+			Instruction instr = this.getCode(cpu.pc);
+			Instruction.checkParity(instr);
+			ACTION.get(instr.opcode / 8).accept(instr);
+		}
+		catch (ParityCheckException e) {
+			e.printStackTrace();
+		}
+		// needs a try/catch
+		// in the try, make an Instruction instr equal to
+		// getCode(cpu.pc). Call Instruction.checkParity with argument instr.
+		// That could throw an Exception, so we only do the next instruction if 
+		// the parity bit is OK. 
+		// Call ACTION.get(instr.opcode/8).accept(instr)
+		// next we have the catch(Exception e) 
+		// here put in the commented line // e.printStackTrace();
+		// in case we want to find out what exception is occurring when debugging
+		// the other lines of the exception are halt(); and throw e;
+	}
+	public void setData(int i, int j) {
+		memory.setData(i, j);
 	}
 
 	public void halt() {
