@@ -10,3 +10,9 @@
 /Machine$CPU.class
 /Machine.class
 /Memory.class
+/Assembler.class
+/SimpleAssembler.class
+*.class
+factorial.pexe
+.classpath
+.project
