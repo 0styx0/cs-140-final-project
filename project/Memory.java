@@ -55,11 +55,14 @@ class Memory {
 
 	Instruction getCode(int index) {
 
+		System.out.println(index);
+		System.out.println(code.size());
+		// 0 <= index < code.size()
 		if (0 <= index && index < code.size()) {
-			throw new CodeAccessException("Illegal access to code");
+			return this.code.get(index);
 		}
 
-		return this.code.get(index);
+		throw new CodeAccessException("Illegal access to code");
 	}
 
 	public Instruction[] getCode(int min, int max) {
