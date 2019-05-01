@@ -5,6 +5,20 @@ import java.util.Set;
 
 public interface Assembler{
 	Set<String> noArgument = Set.of("HALT", "NOP", "NOT");
+	
+	
+	class DataPair{
+		protected int address;
+		protected int value;
+		public DataPair(int address, int value) {
+			this.address = address;
+			this.value = value;
+		}
+		
+		public String toString() {
+			return "dataPair (" + address + ", " + value + ")";
+		}
+	}
 
 	/**
 	 * Method to assemble a file to its executable representation. 
