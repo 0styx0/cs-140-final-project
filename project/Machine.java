@@ -189,6 +189,7 @@ class Machine {
 
 			if (flags == 0) {
 				cpu.accum = memory.getData(instr.arg);
+				cpu.pc++;
 			}
 			else if (flags == 2) {
 				cpu.accum = instr.arg;

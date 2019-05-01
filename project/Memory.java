@@ -89,6 +89,7 @@ class Memory {
 			throw new CodeAccessException("Illegal access to code");
 		}
 
+		// System.out.println(index + " " + instr.opcode + " : " + instr.arg);
 		code.set(index, instr);
 	}
 
