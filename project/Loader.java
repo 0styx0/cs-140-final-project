@@ -50,5 +50,12 @@ public class Loader{
 			System.out.println(machine.getCode(i).getText());
 		}
 		System.out.println(Arrays.toString(machine.getData(0, 20)));
+		
+		machine.setPC(0);
+		while(true) {
+			System.out.println(machine.getCode(machine.getPC()).getText());
+			machine.step();
+			System.out.println(Arrays.toString(machine.getData(0,20)));
+		}
 	}
 }
