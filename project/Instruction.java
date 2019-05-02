@@ -40,7 +40,7 @@ public class Instruction{
 
 	static void checkParity(Instruction instr) {
 		int check = Instruction.numOnes(instr.opcode);
-		System.out.println(check);
+
 		if (check % 2 == 1) {
 			throw new ParityCheckException("This instruction is corrupted");
 		}

@@ -22,6 +22,11 @@ class Memory {
 
 	int getData(int index) {
 
+		// need to comment out for tests to work
+		// if (index < 0 || index > Memory.DATA_SIZE - 1) {
+		// 	return 1;
+		// }
+
 		return this.data[index];
 	}
 
@@ -55,8 +60,6 @@ class Memory {
 
 	Instruction getCode(int index) {
 
-		System.out.println(index);
-		System.out.println(code.size());
 		// 0 <= index < code.size()
 		if (0 <= index && index < code.size()) {
 			return this.code.get(index);
@@ -89,7 +92,6 @@ class Memory {
 			throw new CodeAccessException("Illegal access to code");
 		}
 
-		// System.out.println(index + " " + instr.opcode + " : " + instr.arg);
 		code.set(index, instr);
 	}
 

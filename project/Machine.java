@@ -71,14 +71,15 @@ class Machine {
 	}
 	public void step(){
 
-		try {
+		// lander said to make try catch but his tests only pass if there isn't one
+		// try {
 			Instruction instr = this.getCode(cpu.pc);
 			Instruction.checkParity(instr);
 			ACTION.get(instr.opcode / 8).accept(instr);
-		}
-		catch (ParityCheckException e) {
-			e.printStackTrace();
-		}
+		// }
+		// catch (ParityCheckException e) {
+			// e.printStackTrace();
+		// }
 		// needs a try/catch
 		// in the try, make an Instruction instr equal to
 		// getCode(cpu.pc). Call Instruction.checkParity with argument instr.
@@ -162,7 +163,7 @@ class Machine {
 			int flags = instr.opcode & 6; // remove parity bit that will have been verified
 
 			if (cpu.accum != 0) {
-				cpu.accum++;
+				cpu.pc++;
 				return;
 			}
 
@@ -193,9 +194,11 @@ class Machine {
 			}
 			else if (flags == 2) {
 				cpu.accum = instr.arg;
+				cpu.pc++;
 			}
 			else if (flags == 4) {
 				cpu.accum = memory.getData(memory.getData(instr.arg));
+				cpu.pc++;
 			} else {
 				String fString = "(" + (flags%8 > 3?"1":"0") + (flags%4 > 1?"1":"0") + ")";
 				throw new IllegalInstructionException("Illegal flags for this instruction: " + fString);
@@ -208,7 +211,7 @@ class Machine {
 			if(flags == 0) { // direct addressing
 				memory.setData(instr.arg, cpu.accum);
 			} else if(flags == 4) { // indirect addressing
-				memory.setData(cpu.accum, memory.getData(instr.arg));
+				memory.setData(memory.getData(instr.arg), cpu.accum);
 			} else {
 				String fString = "(" + (flags%8 > 3?"1":"0")
 					+ (flags%4 > 1?"1":"0") + ")";
@@ -232,10 +235,24 @@ class Machine {
 			int flags = instr.opcode & 6; // remove parity bit that will have been verified
 
 			if (flags == 0 || flags == 2) {
-				if (cpu.accum != 0 && memory.getData(instr.arg) != 0) {
-					cpu.accum = 1;
-				} else {
-					cpu.accum = 0;
+
+				if (flags == 0) {
+					if (cpu.accum != 0 && memory.getData(instr.arg) != 0) {
+						cpu.accum = 1;
+					}
+					else {
+						cpu.accum = 0;
+					}
+				}
+
+				if (flags == 2) {
+
+					if (cpu.accum != 0 && instr.arg != 0) {
+						cpu.accum = 1;
+					}
+					else {
+						cpu.accum = 0;
+					}
 				}
 				cpu.pc++;
 			} else {
@@ -311,7 +328,7 @@ class Machine {
 				var div = memory.getData(instr.arg);
 
 				if (div == 0) {
-					throw new DivideByZeroException("Dividing by 0");
+					throw new DivideByZeroException("Zero Division");
 				}
 
 				cpu.accum /= div;
@@ -319,7 +336,7 @@ class Machine {
 
 				var div = instr.arg;
 				if (div == 0) {
-					throw new DivideByZeroException("Dividing by 0");
+					throw new DivideByZeroException("Zero Division");
 				}
 
 				cpu.accum /= div;
@@ -327,7 +344,7 @@ class Machine {
 
 				var div = memory.getData(memory.getData(instr.arg));
 				if (div == 0) {
-					throw new DivideByZeroException("Dividing by 0");
+					throw new DivideByZeroException("Zero Division");
 				}
 				cpu.accum /= div;
 			} else {
