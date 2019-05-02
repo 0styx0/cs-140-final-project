@@ -44,7 +44,7 @@ public class Loader{
 
 	public static void main(String[] args) throws Exception {
 		Machine machine = new Machine(()-> System.exit(0));
-		String str = Loader.load(machine, new File("factorial.pasm"));
+		String str = Loader.load(machine, new File("factorial.pexe"));
 		int StrInt = Integer.parseInt(str);
 		for (int i = 0; i < StrInt;i++) {
 			System.out.println(machine.getCode(i).getText());
