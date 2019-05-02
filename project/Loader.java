@@ -40,8 +40,6 @@ public class Loader{
 		catch (Exception e) {
 			throw e;
 		}
-
-
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -51,5 +49,6 @@ public class Loader{
 		for (int i = 0; i < StrInt;i++) {
 			System.out.println(machine.getCode(i).getText());
 		}
+		System.out.println(Arrays.toString(machine.getData(0, 20)));
 	}
 }
