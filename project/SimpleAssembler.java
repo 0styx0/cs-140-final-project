@@ -30,6 +30,7 @@ public class SimpleAssembler implements Assembler{
 
 		private Instruction makeCode(String[] parts) {
 			Instruction instr = null;
+
 			if (noArgument.contains(parts[0])){
 				int opPart = 8*Instruction.OPCODES.get(parts[0]);
 				opPart+=Instruction.numOnes(opPart)%2;
@@ -98,8 +99,8 @@ public class SimpleAssembler implements Assembler{
 				for (var instr : outputCode) {
 					out.writeInt(instr.opcode);
 					out.writeInt(instr.arg);
-					out.writeInt(-1);
 				}
+				out.writeInt(-1);
 
 				for (var pair : outputData) {
 					out.writeInt(pair.address);
