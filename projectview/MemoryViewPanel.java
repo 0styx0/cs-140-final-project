@@ -50,11 +50,11 @@ public class MemoryViewPanel {
 		innerPanel.setLayout(new BorderLayout());
 
 
-		JPanels numPanel = new JPanel();
+		JPanel numPanel = new JPanel();
 		numPanel.setLayout(new GridLayout(0,1));
-		JPanels decimalPanel = new JPanel();
+		JPanel decimalPanel = new JPanel();
 		decimalPanel.setLayout(new GridLayout(0,1));
-		hJPanels exPanel = new JPanel();
+		JPanel exPanel = new JPanel();
 		exPanel.setLayout(new GridLayout(0,1));
 
 		innerPanel.add(numPanel, BorderLayout.LINE_START);

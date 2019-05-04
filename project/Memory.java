@@ -3,11 +3,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
-class Memory {
+public class Memory {
 
 	public static final int DATA_SIZE = 512;
 	private int[] data = new int[Memory.DATA_SIZE];
-	public final int CODE_SIZE = 256;
+	public final static int CODE_SIZE = 256;
 	private final List<Instruction> code = new ArrayList<>();
 	private int changedDataIndex = -1;
 
@@ -81,7 +81,7 @@ class Memory {
 
 	void addCode(Instruction value) {
 
-		if (code.size() < CODE_SIZE) {
+		if (code.size() < Memory.CODE_SIZE) {
 			code.add(value);
 		}
 	}
