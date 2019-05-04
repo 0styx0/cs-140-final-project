@@ -4,7 +4,7 @@ import java.util.Set;
 
 
 public interface Assembler{
-	Set<String> noArgument = Set.of("HALT", "NOP", "NOT");
+	// Set<String> noArgument = Set.of("HALT", "NOP", "NOT");
 	
 	
 	class DataPair{
