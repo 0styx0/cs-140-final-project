@@ -5,7 +5,7 @@ import java.util.TreeMap;
 import java.util.function.Consumer;
 import java.util.List;
 
-class Machine {
+public class Machine {
 
 
 	private class CPU {
