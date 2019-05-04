@@ -173,9 +173,9 @@ public class Mediator{
 		frame.add(center, BorderLayout.CENTER);
 		frame.add(controlPanel.createControlDisplay(), BorderLayout.PAGE_END);
 		// the next line will be commented or deleted later
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		//frame.addWindowListener(WindowListenerFactory.windowClosingFactory(e -> exit()));
+		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		frame.addWindowListener(WindowListenerFactory.windowClosingFactory(e -> exit()));
 		frame.setLocationRelativeTo(null);
 		tUnit.start();
 		//currentState().enter();
