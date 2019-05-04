@@ -1,5 +1,21 @@
 package projectview;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
+
+import project.Instruction;
+import project.Machine;
+import project.Memory;
 
 class CodeViewPanel {
 
@@ -22,7 +38,7 @@ class CodeViewPanel {
 
 		Border border = BorderFactory.createTitledBorder(
 				BorderFactory.createLineBorder(Color.BLACK),
-				"Code Memory View" ["+ lower +"-"+ upper +"]",
+				"Code Memory View ["+ lower +"-"+ upper +"]",
 				TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION);
 		panel.setBorder(border);
 
@@ -30,21 +46,21 @@ class CodeViewPanel {
 		innerPanel.setLayout(new BorderLayout());
 
 
-		JPanels numPanel = new JPanel();
+		JPanel numPanel = new JPanel();
 		numPanel.setLayout(new GridLayout(0,1));
 		JPanel textPanel = new JPanel();
 		textPanel.setLayout(new GridLayout(0,1));
-		hJPanels exPanel = new JPanel();
-		exPanel.setLayout(new GridLayout(0,1));
+		JPanel hexPanel = new JPanel();
+		hexPanel.setLayout(new GridLayout(0,1));
 
 		innerPanel.add(numPanel, BorderLayout.LINE_START);
 		innerPanel.add(textPanel, BorderLayout.CENTER);
 		innerPanel.add(hexPanel, BorderLayout.LINE_END);
 
-		for (int i = 0, i < Memory.CODE_SIZE; i++) {
+		for (int i = 0; i < Memory.CODE_SIZE; i++) {
 
-			codeBinHex[i] = JTextField(12);
-			codeText[i] = JTextField(10);
+			codeBinHex[i] = new JTextField(12);
+			codeText[i] = new JTextField(10);
 
 			numPanel.add(new JLabel(i+": ", JLabel.RIGHT));
 			codeText[i - lower] = new JTextField(10);
