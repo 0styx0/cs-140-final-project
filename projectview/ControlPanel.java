@@ -46,7 +46,7 @@ public class ControlPanel{
 		return panel;
 	}
 
-	@Override
+	// @Override
 	public void update() {
 		runButton.setEnabled(mediator.getCurrentState().getRunPauseActive());
 		stepButton.setEnabled(mediator.getCurrentState().getStepActive());

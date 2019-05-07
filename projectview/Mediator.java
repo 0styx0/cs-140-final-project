@@ -199,7 +199,7 @@ public class Mediator{
 				Machine machine =
 					new Machine(() ->
 					mediator.setCurrentState(States.PROGRAM_HALTED));
-				mediator.MachineModelsetter(machine);
+				mediator.setMachine(machine);
 				mediator.createAndShowGUI();
 			}
 		});
@@ -226,5 +226,9 @@ public class Mediator{
 		if (decision == JOptionPane.YES_OPTION) {
 			System.exit(0);
 		}
+	}
+	public States getCurrentState() {
+		// TODO Auto-generated method stub
+		return this.currentState;
 	}
 }
