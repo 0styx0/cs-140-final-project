@@ -1,7 +1,7 @@
 package project;
 
 
-class IllegalInstructionException extends RuntimeException {
+public class IllegalInstructionException extends RuntimeException {
 
 	public IllegalInstructionException(String param) {
 

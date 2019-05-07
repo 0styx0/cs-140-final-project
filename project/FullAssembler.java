@@ -239,7 +239,7 @@ public class FullAssembler implements Assembler {
 						//make sure you remember to get rid of the 'N' from the argument as we did above.
 						else if(parts[1].charAt(0) == 'N'/*check for N*/) {
 
-							if(!Instruction.IMD_MNEMONICS.contains(parts[0].toUpperCase())) {
+							if(!Instruction.IND_MNEMONICS.contains(parts[0].toUpperCase())) {
 								error.append("Error on line " + lineNum +
 										": this mnemonic does not allow indirect mode\n");
 								retVal = lineNum;

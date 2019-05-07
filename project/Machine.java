@@ -48,7 +48,7 @@ public class Machine {
 	Instruction[] getCode(int min, int max) {
 		return memory.getCode(min,max);
 	}
-	int getPC() {
+	public int getPC() {
 		return cpu.pc;
 	}
 	public void setPC(int pc) {

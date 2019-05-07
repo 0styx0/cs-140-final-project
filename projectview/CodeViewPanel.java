@@ -38,7 +38,7 @@ class CodeViewPanel {
 
 		Border border = BorderFactory.createTitledBorder(
 				BorderFactory.createLineBorder(Color.BLACK),
-				"Code Memory View ["+ lower +"-"+ upper +"]",
+				"Code Memory View",
 				TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION);
 		panel.setBorder(border);
 
@@ -63,8 +63,8 @@ class CodeViewPanel {
 			codeText[i] = new JTextField(10);
 
 			numPanel.add(new JLabel(i+": ", JLabel.RIGHT));
-			codeText[i - lower] = new JTextField(10);
-			codeBinHex[i-lower] = new JTextField(10);
+			codeText[i] = new JTextField(10);
+			codeBinHex[i] = new JTextField(10);
 			textPanel.add(codeText[i]);
 			hexPanel.add(codeBinHex[i]);
 		}

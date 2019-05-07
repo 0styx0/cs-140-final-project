@@ -1,6 +1,6 @@
 package project;
 
-class  DivideByZeroException extends RuntimeException {
+public class DivideByZeroException extends RuntimeException {
 
 	public DivideByZeroException(String param) {
 

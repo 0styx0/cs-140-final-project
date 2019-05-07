@@ -1,7 +1,11 @@
 package projectview;
 
-import javax.swing;
-import java.awt.event;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
 
 class MenuBarBuilder {
 
@@ -15,7 +19,7 @@ class MenuBarBuilder {
 		mediator = med;
 	}
 
-	@Override
+	// @Override
 	public void update() {
 		assemble.setEnabled(mediator.getCurrentState().getAssembleFileActive());
 		load.setEnabled(mediator.getCurrentState().getLoadFileActive());
@@ -55,9 +59,9 @@ class MenuBarBuilder {
 
 		JMenu menu = new JMenu("Execute");
 
-		go.setMnemonic(KeyEvent.VK_?);
+		go.setMnemonic(KeyEvent.VK_G);
 		go.setAccelerator(KeyStroke.getKeyStroke(
-					KeyEvent.VK_?, ActionEvent.CTRL_MASK));
+					KeyEvent.VK_G, ActionEvent.CTRL_MASK));
 		go.addActionListener(e -> mediator.execute());
 		menu.add(go);
 

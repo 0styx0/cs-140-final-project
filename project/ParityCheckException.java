@@ -1,7 +1,7 @@
 package project;
 import java.util.IllegalFormatFlagsException;
 
-class ParityCheckException extends IllegalFormatFlagsException {
+public class ParityCheckException extends IllegalFormatFlagsException {
 
 	public ParityCheckException(String param) {
 

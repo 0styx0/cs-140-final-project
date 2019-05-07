@@ -5,11 +5,15 @@ import java.awt.Container;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import org.graalvm.compiler.nodeinfo.StructuralInput.Memory;
-
 import project.Machine;
+import project.CodeAccessException;
+import project.ParityCheckException;
+import project.IllegalInstructionException;
+import project.DivideByZeroException;
+import project.Memory;
 
 public class Mediator{
 	private Machine machine;
@@ -25,7 +29,12 @@ public class Mediator{
 	private IOUnit ioUnit;
 	private MenuBarBuilder menuBuilder;
 
-
+	public void setCurrentState(States s) {
+		if(s == States.PROGRAM_HALTED) tUnit.setAutoStepOn(false);
+		currentState = s;
+		s.enter();
+		notify("");
+	}
 	public void step() {
 		if (currentState != States.PROGRAM_HALTED &&
 				currentState != States.NOTHING_LOADED) {
@@ -33,11 +42,11 @@ public class Mediator{
 				machine.step();
 			} catch (CodeAccessException e) {
 				JOptionPane.showMessageDialog(frame,
-						"Illegal access to code from line " + model.getPC() + "\n"
+						"Illegal access to code from line " + machine.getPC() + "\n"
 						+ "Exception message: " + e.getMessage(),
 						"Run time error",
 						JOptionPane.OK_OPTION);
-				System.out.println("Illegal access to code from line " + model.getPC()); // just for debugging
+				System.out.println("Illegal access to code from line " + machine.getPC()); // just for debugging
 				System.out.println("Exception message: " + e.getMessage()); // just for debugging
 			} catch(ArrayIndexOutOfBoundsException e) {
 				// similar JOPtionPane
@@ -65,11 +74,11 @@ public class Mediator{
 					machine.step();
 				} catch (CodeAccessException e) {
 					JOptionPane.showMessageDialog(frame,
-							"Illegal access to code from line " + model.getPC() + "\n"
+							"Illegal access to code from line " + machine.getPC() + "\n"
 							+ "Exception message: " + e.getMessage(),
 							"Run time error",
 							JOptionPane.OK_OPTION);
-					System.out.println("Illegal access to code from line " + model.getPC()); // just for debugging
+					System.out.println("Illegal access to code from line " + machine.getPC()); // just for debugging
 					System.out.println("Exception message: " + e.getMessage()); // just for debugging
 				} catch(ArrayIndexOutOfBoundsException e) {
 					// similar JOPtionPane
@@ -141,7 +150,7 @@ public class Mediator{
 		controlPanel.update();
 		processorPanel.update();
 	}
-	
+
 	private void createAndShowGUI() {
 		tUnit = new TimerUnit(this);
 		//ioUnit = new IOUnit(this);
@@ -159,7 +168,7 @@ public class Mediator{
 		//bar.add(menuBuilder.createFileMenu());
 		//bar.add(menuBuilder.createExecuteMenu());
 
-		Container content = frame.getContentPane(); 
+		Container content = frame.getContentPane();
 		content.setLayout(new BorderLayout(1,1));
 		content.setBackground(Color.BLACK);
 		frame.setSize(1200,600);
@@ -182,13 +191,13 @@ public class Mediator{
 		frame.setVisible(true);
 		notify("");
 	}
-	
+
 	public static void main(String[] args) {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				Mediator mediator = new Mediator();
-				Machine machine = 
-					new Machine(() -> 
+				Machine machine =
+					new Machine(() ->
 					mediator.setCurrentState(States.PROGRAM_HALTED));
 				mediator.MachineModelsetter(machine);
 				mediator.createAndShowGUI();
