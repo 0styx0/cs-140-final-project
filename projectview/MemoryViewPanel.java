@@ -54,8 +54,8 @@ public class MemoryViewPanel {
 		numPanel.setLayout(new GridLayout(0,1));
 		JPanel decimalPanel = new JPanel();
 		decimalPanel.setLayout(new GridLayout(0,1));
-		JPanel exPanel = new JPanel();
-		exPanel.setLayout(new GridLayout(0,1));
+		JPanel hexPanel = new JPanel();
+		hexPanel.setLayout(new GridLayout(0,1));
 
 		innerPanel.add(numPanel, BorderLayout.LINE_START);
 		innerPanel.add(decimalPanel, BorderLayout.CENTER);
@@ -64,7 +64,7 @@ public class MemoryViewPanel {
 		this.dataHex = new JTextField[(upper-lower)];
 		this.dataDecimal = new JTextField[(upper-lower)];
 
-		for (int i = lower, i < upper; i++) {
+		for (int i = lower; i < upper; i++) {
 
 			numPanel.add(new JLabel(i+": ", JLabel.RIGHT));
 			dataDecimal[i - lower] = new JTextField(10);
@@ -112,10 +112,10 @@ public class MemoryViewPanel {
 					dataDecimal != null) {
 				Rectangle bounds = dataDecimal[machine.getChangedDataIndex()-lower].getBounds();
 				bar.setValue(Math.max(0, bounds.y - 15*bounds.height));
-					}
+			}
 		}
 	}
-
+	/*
 	public static void main(String[] args) {
 		Machine machine = new Machine();
 		MemoryViewPanel panel = new MemoryViewPanel(machine, 0, 500);
@@ -128,4 +128,5 @@ public class MemoryViewPanel {
 		System.out.println(Loader.load(machine, new File("test.pexe")));
 		panel.update("");
 	}
+	 */
 }
