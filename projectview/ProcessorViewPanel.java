@@ -18,8 +18,8 @@ public class ProcessorViewPanel {
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(1,0));
 		panel.add(new JLabel("Accumulator: ", JLabel.RIGHT));
-		panel.add(new JLabel("Program Counter: ", JLabel.LEFT));// added 
 		panel.add(acc);
+		panel.add(new JLabel("Program Counter: ", JLabel.RIGHT));// added 
 		panel.add(count); // added
 		return panel;
 	}

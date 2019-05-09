@@ -91,7 +91,7 @@ public class FullAssembler implements Assembler {
 					//note that we will not report consecutive blank lines, just the first illegal blank line.
 					//we will consider this acceptable behavior.
 					if(!blankAlreadyFound && blankLineFound/* check if we have found a blank line here*/) {
-						error.append("\nIllegal blank line in the source file");
+						error.append("\nIllegal blank line in the source file" + ": " + firstBlankLineNum + " ");
 						retVal = firstBlankLineNum;
 						blankLineFound = false;
 						blankAlreadyFound = true;
@@ -185,7 +185,7 @@ public class FullAssembler implements Assembler {
 				//but calling toUpperCase()
 
 				//string comparisons should be done via the equals() method
-				if(parts[0].equals(parts[0].toUpperCase())/*check if mnemonic is not all upper case*/) {
+				if(!parts[0].equals(parts[0].toUpperCase())/*check if mnemonic is not all upper case*/) {
 					// append error message and update retVal
 					// also set parts[0] to the upper cased version of itself so you don't have to account for that below
 					error.append("\nError on line " + lineNum + ": mnemonic must be upper case");
@@ -355,6 +355,7 @@ public class FullAssembler implements Assembler {
 		System.out.println("Enter the name of the file without extension: ");
 		try (Scanner keyboard = new Scanner(System.in)) {
 			String filename = keyboard.nextLine();
+			filename = "pasm/" + filename;
 			int i = new FullAssembler().assemble(filename + ".pasm",
 					filename + ".pexe", error);
 			System.out.println("result = " + i);
