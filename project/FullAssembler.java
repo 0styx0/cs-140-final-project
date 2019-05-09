@@ -355,7 +355,6 @@ public class FullAssembler implements Assembler {
 		System.out.println("Enter the name of the file without extension: ");
 		try (Scanner keyboard = new Scanner(System.in)) {
 			String filename = keyboard.nextLine();
-			filename = "pasm/" + filename;
 			int i = new FullAssembler().assemble(filename + ".pasm",
 					filename + ".pexe", error);
 			System.out.println("result = " + i);
