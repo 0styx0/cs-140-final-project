@@ -48,6 +48,8 @@ public class ControlPanel{
 
 	// @Override
 	public void update() {
+		System.out.println("here");
+		System.out.println(mediator.getCurrentState());
 		runButton.setEnabled(mediator.getCurrentState().getRunPauseActive());
 		stepButton.setEnabled(mediator.getCurrentState().getStepActive());
 		clearButton.setEnabled(mediator.getCurrentState().getClearActive());
