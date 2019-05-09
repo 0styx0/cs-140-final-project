@@ -6,6 +6,7 @@ import java.awt.Rectangle;
 import java.io.File;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -61,8 +62,9 @@ public class MemoryViewPanel {
 		innerPanel.add(decimalPanel, BorderLayout.CENTER);
 		innerPanel.add(hexPanel, BorderLayout.LINE_END);
 
-		this.dataHex = new JTextField[(upper-lower)];
-		this.dataDecimal = new JTextField[(upper-lower)];
+
+		dataHex = new JTextField[(upper-lower)];
+		dataDecimal = new JTextField[(upper-lower)];
 
 		for (int i = lower; i < upper; i++) {
 
@@ -102,7 +104,7 @@ public class MemoryViewPanel {
 			if(previousColor  >= lower && previousColor < upper) {
 				dataDecimal[previousColor-lower].setBackground(Color.YELLOW);
 				dataHex[previousColor-lower].setBackground(Color.YELLOW);
-			} 
+			}
 		}
 		if(scroller != null && machine != null) {
 			JScrollBar bar= scroller.getVerticalScrollBar();
@@ -115,9 +117,14 @@ public class MemoryViewPanel {
 			}
 		}
 	}
-	/*
-	public static void main(String[] args) {
-		Machine machine = new Machine();
+
+	public static void main(String[] args) throws Exception {
+
+		// JFrame frame = new JFrame();
+		// frame.add(new JButton("here"));
+		// frame.setVisible(true);
+
+		Machine machine = new Machine(null);
 		MemoryViewPanel panel = new MemoryViewPanel(machine, 0, 500);
 		JFrame frame = new JFrame("TEST");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -128,5 +135,5 @@ public class MemoryViewPanel {
 		System.out.println(Loader.load(machine, new File("test.pexe")));
 		panel.update("");
 	}
-	 */
+
 }

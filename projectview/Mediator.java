@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -25,7 +26,7 @@ public class Mediator{
 	private MemoryViewPanel memoryViewPanel3;
 	private ControlPanel controlPanel;
 	private ProcessorViewPanel processorPanel;
-	private States currentState;
+	private States currentState = States.NOTHING_LOADED;
 	private IOUnit ioUnit;
 	private MenuBarBuilder menuBuilder;
 
@@ -153,20 +154,20 @@ public class Mediator{
 
 	private void createAndShowGUI() {
 		tUnit = new TimerUnit(this);
-		//ioUnit = new IOUnit(this);
-		//ioUnit.initialize();
+		ioUnit = new IOUnit(this);
+		ioUnit.initialize();
 		codeViewPanel = new CodeViewPanel(machine);
 		memoryViewPanel1 = new MemoryViewPanel(machine, 0, 160);
 		memoryViewPanel2 = new MemoryViewPanel(machine, 160, Memory.DATA_SIZE/2);
 		memoryViewPanel3 = new MemoryViewPanel(machine, Memory.DATA_SIZE/2, Memory.DATA_SIZE);
 		controlPanel = new ControlPanel(this);
 		processorPanel = new ProcessorViewPanel(machine);
-		//menuBuilder = new MenuBarBuilder(this);
+		menuBuilder = new MenuBarBuilder(this);
 		frame = new JFrame("Simulator");
-		//JMenuBar bar = new JMenuBar();
-		//frame.setJMenuBar(bar);
-		//bar.add(menuBuilder.createFileMenu());
-		//bar.add(menuBuilder.createExecuteMenu());
+		JMenuBar bar = new JMenuBar();
+		frame.setJMenuBar(bar);
+		bar.add(menuBuilder.createFileMenu());
+		bar.add(menuBuilder.createExecuteMenu());
 
 		Container content = frame.getContentPane();
 		content.setLayout(new BorderLayout(1,1));
@@ -182,12 +183,12 @@ public class Mediator{
 		frame.add(center, BorderLayout.CENTER);
 		frame.add(controlPanel.createControlDisplay(), BorderLayout.PAGE_END);
 		// the next line will be commented or deleted later
-		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.addWindowListener(WindowListenerFactory.windowClosingFactory(e -> exit()));
 		frame.setLocationRelativeTo(null);
 		tUnit.start();
-		//currentState().enter();
+		getCurrentState().enter();
 		frame.setVisible(true);
 		notify("");
 	}
@@ -196,6 +197,7 @@ public class Mediator{
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				Mediator mediator = new Mediator();
+				// mediator.currentState = States.NOTHING_LOADED;
 				Machine machine =
 					new Machine(() ->
 					mediator.setCurrentState(States.PROGRAM_HALTED));

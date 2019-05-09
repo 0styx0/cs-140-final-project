@@ -113,17 +113,15 @@ class CodeViewPanel {
 		innerPanel.add(textPanel, BorderLayout.CENTER);
 		innerPanel.add(hexPanel, BorderLayout.LINE_END);
 
-		for (int i = 0; i < Memory.CODE_SIZE; i++) {
 
-			codeBinHex[i] = new JTextField(12);
-			codeText[i] = new JTextField(10);
-
+		for(int i = 0; i < Memory.CODE_SIZE; i++) {
 			numPanel.add(new JLabel(i+": ", JLabel.RIGHT));
 			codeText[i] = new JTextField(10);
-			codeBinHex[i] = new JTextField(10);
+			codeBinHex[i] = new JTextField(12);
 			textPanel.add(codeText[i]);
 			hexPanel.add(codeBinHex[i]);
 		}
+
 
 		// textPanel is added to innerPanel at BorderLayout.CENTER and hexPanel is added at BorderLayout.LINE_END
 		innerPanel.add(BorderLayout.CENTER, textPanel);
