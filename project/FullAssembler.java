@@ -185,7 +185,7 @@ public class FullAssembler implements Assembler {
 				//but calling toUpperCase()
 
 				//string comparisons should be done via the equals() method
-				if(parts[0].equals(parts[0].toUpperCase())/*check if mnemonic is not all upper case*/) {
+				if(!parts[0].equals(parts[0].toUpperCase())/*check if mnemonic is not all upper case*/) {
 					// append error message and update retVal
 					// also set parts[0] to the upper cased version of itself so you don't have to account for that below
 					error.append("\nError on line " + lineNum + ": mnemonic must be upper case");
