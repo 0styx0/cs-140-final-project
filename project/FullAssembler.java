@@ -91,7 +91,7 @@ public class FullAssembler implements Assembler {
 					//note that we will not report consecutive blank lines, just the first illegal blank line.
 					//we will consider this acceptable behavior.
 					if(!blankAlreadyFound && blankLineFound/* check if we have found a blank line here*/) {
-						error.append("\nIllegal blank line in the source file");
+						error.append("\nIllegal blank line in the source file" + ": " + firstBlankLineNum + " ");
 						retVal = firstBlankLineNum;
 						blankLineFound = false;
 						blankAlreadyFound = true;
