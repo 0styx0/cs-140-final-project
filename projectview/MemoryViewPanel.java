@@ -73,7 +73,7 @@ public class MemoryViewPanel {
 			hexPanel.add(dataHex[i-lower]);
 		}
 
-		scroller =new JScrollPane(innerPanel);
+		scroller = new JScrollPane(innerPanel);
 		panel.add(scroller);
 		return panel;
 	}

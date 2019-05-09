@@ -8,12 +8,12 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import project.Machine;
 import project.CodeAccessException;
-import project.ParityCheckException;
-import project.IllegalInstructionException;
 import project.DivideByZeroException;
+import project.IllegalInstructionException;
+import project.Machine;
 import project.Memory;
+import project.ParityCheckException;
 
 public class Mediator{
 	private Machine machine;

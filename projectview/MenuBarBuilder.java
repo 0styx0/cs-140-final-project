@@ -19,7 +19,7 @@ class MenuBarBuilder {
 		mediator = med;
 	}
 
-	// @Override
+    @Override
 	public void update() {
 		assemble.setEnabled(mediator.getCurrentState().getAssembleFileActive());
 		load.setEnabled(mediator.getCurrentState().getLoadFileActive());
