@@ -50,17 +50,59 @@ public class Mediator{
 				System.out.println("Illegal access to code from line " + machine.getPC()); // just for debugging
 				System.out.println("Exception message: " + e.getMessage()); // just for debugging
 			} catch(ArrayIndexOutOfBoundsException e) {
+				JOptionPane.showMessageDialog(frame,
+						"ArrayIndexOutOfBoundsException " + machine.getPC() + "\n"
+						+ "Exception message: " + e.getMessage(),
+						"Run time error",
+						JOptionPane.OK_OPTION);
+				System.out.println("ArrayIndexOutOfBoundsException " + machine.getPC()); // just for debugging
+				System.out.println("Exception message: " + e.getMessage()); // just for debugging
 				// similar JOPtionPane
 				// YOU HAVE TO FILL OUT ALL THESE CATCH BLOCKS WITH DIFFERENT MESSAGES
 			} catch(NullPointerException e) {
+				JOptionPane.showMessageDialog(frame,
+						"NullPointerException " + machine.getPC() + "\n"
+						+ "Exception message: " + e.getMessage(),
+						"Run time error",
+						JOptionPane.OK_OPTION);
+				System.out.println("NullPointerException " + machine.getPC()); // just for debugging
+				System.out.println("Exception message: " + e.getMessage()); // just for debugging
 				// similar JOPtionPane
 			} catch(ParityCheckException e) {
+				JOptionPane.showMessageDialog(frame,
+						"ParityCheckException " + machine.getPC() + "\n"
+						+ "Exception message: " + e.getMessage(),
+						"Run time error",
+						JOptionPane.OK_OPTION);
+				System.out.println("ParityCheckException " + machine.getPC()); // just for debugging
+				System.out.println("Exception message: " + e.getMessage()); // just for debugging
 				// similar JOPtionPane
 			} catch(IllegalInstructionException e) {
+				JOptionPane.showMessageDialog(frame,
+						"IllegalInstructionException " + machine.getPC() + "\n"
+						+ "Exception message: " + e.getMessage(),
+						"Run time error",
+						JOptionPane.OK_OPTION);
+				System.out.println("ParityCheckException " + machine.getPC()); // just for debugging
+				System.out.println("Exception message: " + e.getMessage()); // just for debugging
 				// similar JOPtionPane
 			} catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(frame,
+						"IllegalArgumentException " + machine.getPC() + "\n"
+						+ "Exception message: " + e.getMessage(),
+						"Run time error",
+						JOptionPane.OK_OPTION);
+				System.out.println("IllegalArgumentException " + machine.getPC()); // just for debugging
+				System.out.println("Exception message: " + e.getMessage()); // just for debugging
 				// similar JOPtionPane
 			} catch(DivideByZeroException e) {
+				JOptionPane.showMessageDialog(frame,
+						"DivideByZeroException " + machine.getPC() + "\n"
+						+ "Exception message: " + e.getMessage(),
+						"Run time error",
+						JOptionPane.OK_OPTION);
+				System.out.println("DivideByZeroException " + machine.getPC()); // just for debugging
+				System.out.println("Exception message: " + e.getMessage()); // just for debugging
 				// similar JOPtionPane
 			}
 			notify("");
@@ -82,17 +124,59 @@ public class Mediator{
 					System.out.println("Illegal access to code from line " + machine.getPC()); // just for debugging
 					System.out.println("Exception message: " + e.getMessage()); // just for debugging
 				} catch(ArrayIndexOutOfBoundsException e) {
+					JOptionPane.showMessageDialog(frame,
+							"ArrayIndexOutOfBoundsException" + machine.getPC() + "\n"
+							+ "Exception message: " + e.getMessage(),
+							"Run time error",
+							JOptionPane.OK_OPTION);
+					System.out.println("ArrayIndexOutOfBoundsException" + machine.getPC()); // just for debugging
+					System.out.println("Exception message: " + e.getMessage()); // just for debugging
 					// similar JOPtionPane
 					// YOU HAVE TO FILL OUT ALL THESE CATCH BLOCKS WITH DIFFERENT MESSAGES
 				} catch(NullPointerException e) {
+					JOptionPane.showMessageDialog(frame,
+							"NullPointerException " + machine.getPC() + "\n"
+							+ "Exception message: " + e.getMessage(),
+							"Run time error",
+							JOptionPane.OK_OPTION);
+					System.out.println("NullPointerException" + machine.getPC()); // just for debugging
+					System.out.println("Exception message: " + e.getMessage()); // just for debugging
 					// similar JOPtionPane
 				} catch(ParityCheckException e) {
+					JOptionPane.showMessageDialog(frame,
+							"ParityCheckException" + machine.getPC() + "\n"
+							+ "Exception message: " + e.getMessage(),
+							"Run time error",
+							JOptionPane.OK_OPTION);
+					System.out.println("ParityCheckException " + machine.getPC()); // just for debugging
+					System.out.println("Exception message: " + e.getMessage()); // just for debugging
 					// similar JOPtionPane
 				} catch(IllegalInstructionException e) {
+					JOptionPane.showMessageDialog(frame,
+							"IllegalInstructionException" + machine.getPC() + "\n"
+							+ "Exception message: " + e.getMessage(),
+							"Run time error",
+							JOptionPane.OK_OPTION);
+					System.out.println("IllegalInstructionException" + machine.getPC()); // just for debugging
+					System.out.println("Exception message: " + e.getMessage()); // just for debugging
 					// similar JOPtionPane
 				} catch(IllegalArgumentException e) {
+					JOptionPane.showMessageDialog(frame,
+							"IllegalArgumentException" + machine.getPC() + "\n"
+							+ "Exception message: " + e.getMessage(),
+							"Run time error",
+							JOptionPane.OK_OPTION);
+					System.out.println("IllegalArgumentException" + machine.getPC()); // just for debugging
+					System.out.println("Exception message: " + e.getMessage()); // just for debugging
 					// similar JOPtionPane
 				} catch(DivideByZeroException e) {
+					JOptionPane.showMessageDialog(frame,
+							"DivideByZeroException" + machine.getPC() + "\n"
+							+ "Exception message: " + e.getMessage(),
+							"Run time error",
+							JOptionPane.OK_OPTION);
+					System.out.println("DivideByZeroException " + machine.getPC()); // just for debugging
+					System.out.println("Exception message: " + e.getMessage()); // just for debugging
 					// similar JOPtionPane
 				}
 					}
